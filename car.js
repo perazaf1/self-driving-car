@@ -15,9 +15,6 @@ class Car{
         this.friction = 0.05
         // angle pour les rotations de la voiture
         this.angle = 0;
-
-        
-
         // controle de la voiture
         this.controls = new Controls();
     }
