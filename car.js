@@ -30,30 +30,26 @@ class Car{
     #move(){
          // aller en avant
          if (this.controls.forward) {
-            // ajouter acccel pour aller en avant
-            this.speed += this.acceleration;  
+            this.speed += this.acceleration;  // ajouter acccel pour aller en avant
         }
         // aller en arrière
         if (this.controls.reverse){
-            // enelver l'acceleration pour aller en arrière
-            this.speed -= this.acceleration;
+            this.speed -= this.acceleration;  // enelver l'acceleration pour aller en arrière
         }
         // pour faire ralentir la voiture
         if (this.speed>this.maxSpeed){
             this.speed = this.maxSpeed
         }
-        // vitesse en reverse (voiture va en arrière donc -)
         if (this.speed < -this.maxSpeed/2){
-            this.speed = -this.maxSpeed/2
+            this.speed = -this.maxSpeed/2 // vitesse en reverse (voiture va en arrière donc -)
         }
         if (this.speed > 0){
-            this.speed -= this.friction;
-            // ajouter de la friction à la voiture
+            this.speed -= this.friction; // ajouter de la friction à la voiture
         }
         if(this.speed < 0){
-            this.speed += this.friction
-            // ajouter de la friction à la voiture si elle va en arrière
+            this.speed += this.friction // ajouter de la friction à la voiture si elle va en arrière
         }
+
         // voiture bouge tt le tps à cause de la friction
         if (Math.abs(this.speed)<this.friction){
             this.speed = 0
@@ -67,8 +63,7 @@ class Car{
             if (this.controls.right){
                 this.angle-= 0.03*flip;
             }
-        }
-        
+        } 
         // rotations de la voiture et sa direction avec le cerle trigonométrique
         this.x -= Math.sin(this.angle)*this.speed;
         this.y -= Math.cos(this.angle)*this.speed;
@@ -82,16 +77,14 @@ class Car{
 
         ctx.beginPath();
         ctx.rect(
-            // construction du rectangle qui sert de voiture
-            -this.width/2,
-            // dessin de la voiture
+           // dessin de la voiture
+            -this.width/2,  // construction du rectangle qui sert de voiture
             -this.height/2,
             // proportions de la voiture reative à 'écran
             this.width,
             this.height
         );
         ctx.fill();
-            // restore pour ne pas redessiner à chaque fois
-        ctx.restore();
+        ctx.restore();// restore pour ne pas redessiner à chaque fois
     }
 }
