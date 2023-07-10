@@ -18,6 +18,7 @@ class Road {
     const topRight = { x: this.right, y: this.top };
     const bottomLeft = { x: this.left, y: this.bottom };
     const bottomRight = { x: this.right, y: this.bottom };
+
     // know where the borders of the road are
     this.borders = [
       [topLeft, bottomLeft],
